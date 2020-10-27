@@ -10,7 +10,7 @@ export default class PokemonList extends Component {
         url: "https://pokeapi.co/api/v2/pokemon/",
         pokemon: null
     }
-  
+ 
     //Async makes it run into the background
     async componentDidMount() {
         //Await waits for the data to be all loaded before running the next part
@@ -19,8 +19,6 @@ export default class PokemonList extends Component {
         this.setState({ pokemon: res.data['results'] }); 
     }
 
-
-
     render() {
         return (
             //Temporary Div
@@ -28,9 +26,13 @@ export default class PokemonList extends Component {
             {this.state.pokemon ? 
             //Condition to check state
             (
-                <div className="row">
+            <div className="row">
                 {this.state.pokemon.map(pokemon => (
-                    <PokemonCard />
+                    <PokemonCard 
+                        key={pokemon.name}
+                        name={pokemon.name}
+                        url={pokemon.url}
+                    />
                 ))}
             </div>
             ) 
