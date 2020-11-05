@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import './pokemoncard.css';
-import styled from 'styled-components'
 
-const sprite = styled.img`
-    width: 5em;
-    height: 5em;
-`;
 export default class PokemonCard extends Component {
 
     state = {
@@ -18,10 +13,8 @@ export default class PokemonCard extends Component {
         const { name, url } = this.props;
         //get the pokemon index
         const pokemonIndex = url.split("/")[url.split('/').length - 2];
-        const imageUrl = `https//github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png`;
 
         this.setState({ name: name,
-                        imageurl: imageUrl,
                         pokemonIndex: pokemonIndex
         });
     }
@@ -30,9 +23,6 @@ export default class PokemonCard extends Component {
             <div className="col-md-3 col-sm-6 mb-5">
                 <div className="card">
                     <h5 className="card-header">{this.state.pokemonIndex}</h5>
-                    <sprite className="card-img-top rounded mx-auto mt-5" src={this.state.imageUrl} >
-                        
-                    </sprite>
                     <div className="card-body mx-auto">
                         <h6 className="card-title">{this.state.name
                             .toLowerCase()

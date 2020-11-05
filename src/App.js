@@ -1,15 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Dashboard from './Components/Layout/Dashboard';
-import PokeNavBar from './Components/Layout/PokeNavbar';
-
+import PokemonSearch from './Components/Layout/PokemonSearch';
 
 function App() {
   return (
     <div className="App">
-      <PokeNavBar />
+      <PokemonSearch />
       <div className="container">
-        <Dashboard />
       </div>
     </div>
   );

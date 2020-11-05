@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PokeCard from './PokemonCard';
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
 
@@ -26,6 +25,7 @@ export default class PokemonList extends Component {
             {this.state.pokemon ? 
             //Condition to check state
             (
+            //Map takes single array and takes that data
             <div className="row">
                 {this.state.pokemon.map(pokemon => (
                     <PokemonCard 
